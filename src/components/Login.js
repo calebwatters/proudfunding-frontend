@@ -39,7 +39,6 @@ class Login extends Component {
         return (
             
             <div>
-                <Header/>
                 <div className="login-page">
                     <div className="main-header">
                         <br></br>

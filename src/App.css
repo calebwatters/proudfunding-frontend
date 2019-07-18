@@ -43,8 +43,14 @@
 }
 
 .main-header {
+  z-index: 999999;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
   color: white;
   background-color: rgb(80, 78, 78);
+  max-height: 20vh;
+  width: 100vw;
 }
 body {
   background-color: gray
@@ -79,10 +85,15 @@ label {
   color: white;
 }
 
+/*---------------------------------------
+   Login Page            
+-----------------------------------------*/
+
 .login-page {
   margin-top: 5vw;
   margin-right:auto;
   margin-left:auto;
+  margin-bottom: 3vw;
   position: center;
   width: 30vw;
   height: 30vw;
@@ -93,6 +104,10 @@ label {
 .google-button {
   margin-top: 9vw;
 }
+
+/*---------------------------------------
+   Carousel            
+-----------------------------------------*/
 
 .carousel {
   margin-right:auto;
@@ -108,12 +123,92 @@ label {
   margin-right:auto;
   margin-left:auto;
   margin-top: 5vw;
+  margin-bottom: 10vw;
   position: center;
   max-width: 80vw;
 }
+
+
 
 .image-slider {
   padding-top: 1vw;
 }
 
+/*---------------------------------------
+   Social icon             
+-----------------------------------------*/
 
+.social-icon li {
+    display: inline-block;
+    list-style: none;
+}
+
+.social-icon li a {
+    border: .09vw solid #292929;
+    color: #292929;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin: 22px 12px 10px 12px;
+}
+
+.social-icon li a:hover {
+    border-color: #A4C4FB;
+    color: #A4C4FB;
+    transform: scale(1.1);
+}
+
+
+/*---------------------------------------
+   Footer             
+-----------------------------------------*/
+
+.main-footer {
+  color: white;
+  bottom: 0;
+  background-color: rgb(80, 78, 78);
+}
+
+/*---------------------------------------
+   Products Index             
+-----------------------------------------*/
+
+.products-index {
+  margin-right:auto;
+  margin-left:auto;
+  margin-top: 5vw;
+  margin-bottom: 10vw;
+  position: center;
+  max-width: 80vw;
+}
+
+.filter-header {
+  z-index: 999999;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 7.29vw;
+  color: white;
+  background-color: gray;
+  opacity: 0.7;
+}
+
+.search-bar {
+  max-width: 10vw;
+}
+
+.search-menu {
+  width: 98vw;
+}
+
+.no-results {
+  color: white;
+  min-height: 59vh;
+}

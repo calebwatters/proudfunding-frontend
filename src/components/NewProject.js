@@ -12,7 +12,6 @@ export default class NewProject extends Component {
         
         return (
             <div>
-                <Header />
                 <div className="new-project-form">
                     <div className="form-fields">
                     <form className="ui form">
