@@ -1,0 +1,119 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.new-project-form {
+  margin-right:auto;
+  margin-left:auto;
+  position: center;
+  width: 90vw;
+  height: 40vw;
+  background-color:rgb(124, 122, 122);
+  box-shadow: 6px 2px 276px -12px rgba(0,0,0,0.75);
+}
+
+.main-header {
+  color: white;
+  background-color: rgb(80, 78, 78);
+}
+body {
+  background-color: gray
+}
+
+h1 {
+  font-size: 2.9vw;
+}
+
+h2 {
+  font-size: 1.5vw;
+}
+
+a {
+  font-size: 2vmin;
+}
+
+.page-logo {
+  text-align: left;
+  margin-left: 2%;
+}
+
+.form-fields {
+  padding-top: 5vw;
+  text-align: left;
+  margin-right:auto;
+  margin-left:auto;
+  width: 30vw;
+}
+
+label {
+  color: white;
+}
+
+.login-page {
+  margin-top: 5vw;
+  margin-right:auto;
+  margin-left:auto;
+  position: center;
+  width: 30vw;
+  height: 30vw;
+  background-color:rgb(124, 122, 122);
+  box-shadow: 6px 2px 276px -12px rgba(0,0,0,0.75);
+}
+
+.google-button {
+  margin-top: 9vw;
+}
+
+.carousel {
+  margin-right:auto;
+  margin-left:auto;
+  position: center;
+  width: 100vw;
+  height: 22vw;
+  background-color:rgb(124, 122, 122);
+  box-shadow: 6px 2px 276px -12px rgba(0,0,0,0.75);
+}
+
+.featured-products {
+  margin-right:auto;
+  margin-left:auto;
+  margin-top: 5vw;
+  position: center;
+  max-width: 80vw;
+}
+
+.image-slider {
+  padding-top: 1vw;
+}
+
+
