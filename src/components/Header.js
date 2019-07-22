@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import { Dropdown } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
+import UserDropdown from './UserDropdown'
 
 
 export default class Header extends Component {
@@ -17,7 +18,8 @@ export default class Header extends Component {
                         <Link className="item" to="/products" >Products</Link>
                   
                     <div className="right menu">
-                        <Link className="item" to="/login" >Login</Link>
+                        {this.props.loggedIn === false ? <Link className="item" to="/login" >Login</Link> : <UserDropdown user={this.props.user} />}
+                        
                     </div>
                 </div>
             </div>

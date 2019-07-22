@@ -49,11 +49,25 @@
   top: 0;
   color: white;
   background-color: rgb(80, 78, 78);
-  max-height: 20vh;
+  /* max-height: 20vh; */
   width: 100vw;
+}
+
+.login-header {
+  z-index: 999999;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  color: white;
+  background-color: rgb(80, 78, 78);
+  max-height: 20vh;
 }
 body {
   background-color: gray
+}
+
+button {
+  width: 10vw;
 }
 
 h1 {
@@ -62,6 +76,13 @@ h1 {
 
 h2 {
   font-size: 1.5vw;
+}
+h3 {
+  font-size: 1vw;
+}
+
+h4 {
+  font-size: 0.8vw;
 }
 
 a {
@@ -191,7 +212,7 @@ label {
 }
 
 .filter-header {
-  z-index: 999999;
+  z-index: 98;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 7.29vw;
@@ -212,3 +233,75 @@ label {
   color: white;
   min-height: 59vh;
 }
+
+.user-dropdown {
+  color: white;
+  margin-top: 1vw;
+  margin-right: 2vw;
+  z-index: 100;
+}
+
+.user-dropdown-header {
+  color:white;
+}
+
+.user-account {
+  min-height: 36.9vw;
+}
+
+.user-account h2 {
+  color:white;
+  text-align: left;
+}
+
+.user-account h3 {
+  color:white;
+  text-align: left;
+}
+
+.user-account h4 {
+  color:white;
+  text-align: left;
+}
+
+.card-form {
+  margin-top: 4vw;
+  width: 60vw;
+}
+
+/*---------------------------------------
+   Products Show             
+-----------------------------------------*/
+
+
+.product-show {
+  color: white;
+  margin-top: 2%;
+  margin-right:auto;
+  margin-left:auto;
+  position: center;
+  width: 90vw;
+  height: 40vw;
+  background-color:rgb(124, 122, 122);
+  box-shadow: 6px 2px 276px -12px rgba(0,0,0,0.75);
+}
+
+.product-shipping {
+  margin-right: 2%;
+  color: white;
+  height: 35vw;
+  background-color:rgb(124, 122, 122);
+  box-shadow: 6px 2px 30px -12px rgba(0,0,0,0.75);
+}
+
+.product-images {
+  margin-right: 2%;
+  color: white;
+  height: 40vw;
+  overflow: hidden;
+
+}
+
+
+
+

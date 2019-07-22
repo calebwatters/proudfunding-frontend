@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card  } from 'semantic-ui-react'
 import FeaturedProduct from './FeaturedProduct';
 // import { Dropdown } from 'semantic-ui-react'
-
+import { API_ROOT } from '../constants/index';
 
 
 export default class FeaturedProducts extends Component {
@@ -11,12 +11,39 @@ export default class FeaturedProducts extends Component {
         products: []
     }
     componentDidMount() {
-        fetch('http://localhost:3000/api/v1/products')
+        fetch(`${API_ROOT}/products`)
         .then(res => res.json())
-        .then(json => this.setState({
-            products: json.slice(0,4)
-        }))
+        .then(json => {
+            if(this.props.current) {
+                const filtered = json.filter(product => product.name !== this.props.current.name)
+                this.setState({
+                    products: filtered
+                })
+            } else {
+                this.setState({
+                products: json.slice(0,4)
+            })
+        }
+    })
     }
+
+    // componentDidUpdate() {
+    //     fetch(`${API_ROOT}/products`)
+    //         .then(res => res.json())
+    //         .then(json => {
+    //             if (this.props.current) {
+    //                 const filtered = json.filter(product => product.name !== this.props.current.name)
+    //                 this.setState({
+    //                     products: filtered.slice(0, 4)
+    //                 })
+    //             } else {
+    //                 this.setState({
+    //                     products: json.slice(0, 4)
+    //                 })
+    //             }
+    //         })
+    // }
+
 
     render() {
         return (

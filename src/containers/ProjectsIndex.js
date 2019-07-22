@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card } from 'semantic-ui-react'
 import FeaturedProduct from '../components/FeaturedProduct';
+import { API_ROOT } from '../constants/index';
 
 export default class ProjectsIndex extends Component {
     state = {
@@ -37,7 +38,12 @@ export default class ProjectsIndex extends Component {
                 {this.state.projects.length === 0? <div className="no-results"><h1>Sorry, we couldn't find anything under those search parameters</h1>
                 </div>:null}
                 <div className="projects-index">
-                 
+                    {/* <Card.Group itemsPerRow={4}>
+                        {this.state.products.map(product => {
+                            return <FeaturedProduct key={product.id} product={product} />
+                        })}
+
+                    </Card.Group> */}
                 </div>
             </div>
         )

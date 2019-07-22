@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import { Card } from 'semantic-ui-react'
 import FeaturedProduct from '../components/FeaturedProduct';
+import { API_ROOT } from '../constants/index';
 
 export default class ProductsIndex extends Component {
     state = {
         products: []
     }
     componentDidMount() {
-        fetch('http://localhost:3000/api/v1/products')
+        fetch(`${API_ROOT}/products`)
             .then(res => res.json())
             .then(json => this.setState({
                 products: json
