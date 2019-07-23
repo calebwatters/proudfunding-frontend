@@ -4,6 +4,7 @@ import Login from './components/Login'
 import Main from './containers/Main'
 import NewProject from './components/NewProject'
 import Header from './components/Header'
+import Logout from './components/Logout'
 import Footer from './components/Footer'
 import ProductsIndex from './containers/ProductsIndex'
 import ProjectsIndex from './containers/ProjectsIndex'
@@ -58,17 +59,25 @@ class App extends React.Component {
   }
 
   handleLogout = () => {
+    this.clearToken()
     this.setState({
       loggedIn: false,
       user: ''
     })
   }
+
+  clearToken(jwt) {
+    localStorage.setItem('jwt', '')
+  }
+
+
   render() {
     return (
       <Router>
         <div className="App">
           <Header user={this.state.user} loggedIn={this.state.loggedIn}/>
           <Route exact path='/projects/new' render={() => <NewProject user={this.state.user} loggedIn={this.state.loggedIn}/>} />
+          <Route exact path='/user/logout' render={() => <Logout user={this.state.user} logout={this.handleLogout} loggedIn={this.state.loggedIn} />} />
           <Route exact path='/user/account' render={() => <UserAccount user={this.state.user} />} />
           <Route exact path='/user/dashboard' render={() => <UserDashboard user={this.state.user} />} />
           <Route exact path='/user/cart' render={() => <UserCart user={this.state.user} />} />

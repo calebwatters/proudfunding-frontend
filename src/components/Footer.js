@@ -1,9 +1,4 @@
 import React, { Component } from 'react'
-// import { Dropdown } from 'semantic-ui-react'
-
-import { Link } from "react-router-dom";
-
-
 export default class Footer extends Component {
 
 

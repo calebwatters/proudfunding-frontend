@@ -8,7 +8,7 @@ export default class UserDropdown extends Component {
     
     render() {
         let options = [{ key: 'user', text: 'Cart', icon: 'cart', as: Link, to: '/user/cart' },{ key: 'dashboard', text: 'Dashboard', icon: 'dashboard', as: Link, to: '/user/dashboard' },
-            { key: 'cart', text: 'Account Settings', icon: 'settings', as: Link, to: '/user/account' }, { key: 'logout', text: 'Logout', icon: 'sign-in', as: Link, to: '/user/account' }, 
+            { key: 'cart', text: 'Account Settings', icon: 'settings', as: Link, to: '/user/account' }, { key: 'logout', text: 'Logout', icon: 'sign-in', as: Link, to: '/user/logout' }, 
             ]
         return (
             <div className="user-dropdown">

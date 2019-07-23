@@ -1,9 +1,4 @@
 import React, { Component } from 'react'
-import { API_ROOT } from '../constants/index'
-import { Card } from 'semantic-ui-react'
-import FeaturedProducts from '../components/FeaturedProducts'
-import Carousel from '../components/Carousel'
-import { removePropertiesDeep } from '@babel/types';
 
 export default class ProjectInfo extends Component {
 

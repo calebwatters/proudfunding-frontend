@@ -13,7 +13,6 @@ export default class UserDashboard extends Component {
             .then(res => res.json())
             .then(json => {
                 let userProjects = json.filter(project => project.user.id === this.props.user.id)
-                // console.log(json)
                 this.setState({
                     projects: userProjects
                 })
@@ -30,7 +29,7 @@ export default class UserDashboard extends Component {
                     </div>
                 </div>
                 <div className="twelve wide stretched column">
-                    <h3 style={{ color: 'white' }}>Total Funds Raised: </h3>
+                    <h3 style={{ color: 'white' }}>Total Funds Raised: {this.state.projects.length ===0?0:null} </h3>
                     <div className="ui divider"></div>
 
                     <div className="dashboard-stats">

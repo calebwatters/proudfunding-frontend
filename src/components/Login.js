@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import GoogleLogin from 'react-google-login';
-import Header from './Header'
 import { Redirect } from "react-router-dom";
 import { API_ROOT } from '../constants/index';
 class Login extends Component {

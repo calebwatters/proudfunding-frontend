@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import ImageSlide from './ImageSlide'
-import Arrow from './Arrow'
+
 
 export default class Carousel extends Component {
     constructor (props) {
@@ -43,24 +43,15 @@ export default class Carousel extends Component {
       <div className="carousel">
           <h2>Projects of the Week!</h2>
           <div className="image-slider">
-            {/* <Arrow
-                direction="left"
-                clickFunction={this.previousSlide}
-                glyph="&#9664;" /> */}
-                <div onClick={this.previousSlide}class="left-arrow-icon">
-                    <div class="right-arrow"></div>
+                <div onClick={this.previousSlide}className="left-arrow-icon">
+                    <div className="right-arrow"></div>
                 </div>
 
         <ImageSlide project={ this.props.projects[this.state.currentImageIndex] } />
 
-                <div onClick={this.nextSlide} class="right-arrow-icon">
-                    <div class="left-arrow"></div>
+                <div onClick={this.nextSlide} className="right-arrow-icon">
+                    <div className="left-arrow"></div>
                 </div>
-
-            {/* <Arrow
-                direction="right"
-                clickFunction={this.nextSlide}
-                glyph="&#9654;" /> */}
             </div>
       </div>
     );
