@@ -2,24 +2,27 @@ import React, { Component } from 'react'
 import { Card } from 'semantic-ui-react'
 import FeaturedProduct from '../components/FeaturedProduct';
 import { API_ROOT } from '../constants/index';
+import ProjectCard from '../components/ProjectCard'
 
 export default class ProjectsIndex extends Component {
     state = {
         projects: []
     }
-    // componentDidMount() {
-    //     fetch('http://localhost:3000/api/v1/projects')
-    //         .then(res => res.json())
-    //         .then(json => this.setState({
-    //             projects: json
-    //         }))
-    // }
+    componentDidMount() {
+        fetch(`${API_ROOT}/projects`)
+            .then(res => res.json())
+            .then(json => this.setState({
+                projects: json
+            }))
+    }
 
     handleFilter = (ev) => {
         ev.preventDefault()
         console.log(ev.target[0].value)
         ev.target[0].value = ""
     }
+
+    
 
     render() {
         return (
@@ -38,12 +41,11 @@ export default class ProjectsIndex extends Component {
                 {this.state.projects.length === 0? <div className="no-results"><h1>Sorry, we couldn't find anything under those search parameters</h1>
                 </div>:null}
                 <div className="projects-index">
-                    {/* <Card.Group itemsPerRow={4}>
-                        {this.state.products.map(product => {
-                            return <FeaturedProduct key={product.id} product={product} />
-                        })}
-
-                    </Card.Group> */}
+                    <div className="projects-container">
+                    {this.state.projects.map(project => {
+                       return <ProjectCard key={project.id}project={project}/>
+                    })}
+                    </div>
                 </div>
             </div>
         )

@@ -1,17 +1,52 @@
 import React, { Component } from 'react'
-import Header from './Header'
-// import { Dropdown } from 'semantic-ui-react'
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { API_ROOT } from '../constants/index';
+import { Redirect } from "react-router-dom";
+
 
 
 export default class NewProject extends Component {
 
-
+    state ={
+        submitted: false
+    }
     handleSubmit = (ev) => {
         ev.preventDefault()
+        let token = this.getToken()
+        let user = this.props.user
+        let title = ev.target[0].value
+        let description = ev.target[1].value
+        let companyName = ev.target[2].value
+        let companyUrl = ev.target[3].value
+        let imageUrl = ev.target[4].value
+        let goal = ev.target[5].value
+        //TODO write case switch to make sure required fields are filled in
+
+        fetch(`${API_ROOT}/projects`, {
+            method: 'POST', 
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-type': 'Application/json'
+            }, 
+            body: JSON.stringify({project: {title: title, user_id: user.id, description: description,
+                 company_name: companyName, company_url: companyUrl, 
+                 funding_goal: goal, image1_url: imageUrl, current_funding: 0}})
+        }).then(res => res.json())
+        .then(json => this.setState({
+            submitted: true
+        }))
+    }
+
+    getToken(jwt) {
+        return localStorage.getItem('jwt')
     }
 
     render() {
+          if (this.state.submitted === true) {
+            return <Redirect to={{
+                pathname: '/user/dashboard',
+            }}
+            />
+        }
         
         return (
             <div>
@@ -42,7 +77,11 @@ export default class NewProject extends Component {
                                 <label style={{ color: 'white' }} >Project Image Url</label>
                                 <input rows="1" placeholder="https://example.com"></input>
                             </div>
-
+                            
+                            <div className="field">
+                                <label style={{ color: 'white' }} >Funding Goal</label>
+                                <input rows="1" placeholder="10000"></input>
+                            </div>
                         <div>
                             <button className="ui button">Create Project</button>
                         </div>

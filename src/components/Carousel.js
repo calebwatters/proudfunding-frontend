@@ -16,7 +16,7 @@ export default class Carousel extends Component {
 
 
     nextSlide() {
-        const lastIndex = this.props.imgUrls.length - 1;
+        const lastIndex = this.props.projects.length - 1;
         const { currentImageIndex } = this.state;
         const shouldResetIndex = currentImageIndex === lastIndex;
         const index = shouldResetIndex ? 0 : currentImageIndex + 1;
@@ -27,7 +27,7 @@ export default class Carousel extends Component {
     }
 
     previousSlide() {
-        const lastIndex = this.props.imgUrls.length - 1;
+        const lastIndex = this.props.projects.length - 1;
         const { currentImageIndex } = this.state;
         const shouldResetIndex = currentImageIndex === 0;
         const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
@@ -41,18 +41,26 @@ export default class Carousel extends Component {
   render () {
     return (
       <div className="carousel">
+          <h2>Projects of the Week!</h2>
           <div className="image-slider">
-            <Arrow
+            {/* <Arrow
                 direction="left"
                 clickFunction={this.previousSlide}
-                glyph="&#9664;" />
+                glyph="&#9664;" /> */}
+                <div onClick={this.previousSlide}class="left-arrow-icon">
+                    <div class="right-arrow"></div>
+                </div>
 
-        <ImageSlide url={ this.props.imgUrls[this.state.currentImageIndex] } />
+        <ImageSlide project={ this.props.projects[this.state.currentImageIndex] } />
 
-            <Arrow
+                <div onClick={this.nextSlide} class="right-arrow-icon">
+                    <div class="left-arrow"></div>
+                </div>
+
+            {/* <Arrow
                 direction="right"
                 clickFunction={this.nextSlide}
-                glyph="&#9654;" />
+                glyph="&#9654;" /> */}
             </div>
       </div>
     );

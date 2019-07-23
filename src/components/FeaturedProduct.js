@@ -42,12 +42,12 @@ export default class FeaturedProduct extends Component {
         return (
  
                 <Card onClick={this.handleClick}>
-                    <Image src='https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg' wrapped ui={false} />
+                    <Image src={this.props.product.image1_url} wrapped ui={false} />
                     <Card.Content>
                     <Card.Header><h2>{this.props.product.name}</h2></Card.Header>
-                        <Card.Meta>Posted at: {this.props.product.created_at}</Card.Meta>
+                        {/* <Card.Meta>Posted at: {this.props.product.created_at}</Card.Meta> */}
                         <Card.Description>
-                        <p>{this.props.product.description}</p>
+                        <p>{this.props.product.description.slice(0, 100) + '...'}</p>
                     </Card.Description>
                     </Card.Content>
                     <Card.Content extra>

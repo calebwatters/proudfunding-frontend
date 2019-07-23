@@ -10,6 +10,14 @@ export default class ProductInfo extends Component {
         products: []
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
+    componentDidUpdate() {
+        window.scrollTo(0, 0)
+    }
+
     render() {
 
 
@@ -47,7 +55,7 @@ export default class ProductInfo extends Component {
                                 <h2>Ordering Preferences</h2>
                                 <div className="ui divider"></div>
                                     <br></br>
-                                <button className="ui button secondary"><h4><i className="ui icon cart"></i> Add to card</h4></button>
+                                <button className="ui button secondary"><h4><i className="ui icon cart"></i> Add to cart</h4></button>
                             </div>
                         </div>
 

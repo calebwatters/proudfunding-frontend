@@ -10,7 +10,9 @@ import ProjectsIndex from './containers/ProjectsIndex'
 import UserAccount from './containers/UserAccount'
 import UserDashboard from './containers/UserDashboard'
 import UserCart from './containers/UserCart'
+import ProjectInfo from './containers/ProjectInfo'
 import ProductInfo from './containers/ProductInfo'
+
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import {API_ROOT} from './constants/index'
@@ -41,6 +43,9 @@ class App extends React.Component {
       .then(res => res.json())
       .then(json => {
         console.log('profile:', json)
+        this.setState({
+          user: json.user
+        })
         this.handleLogin(json.user)
       })
   }
@@ -63,7 +68,7 @@ class App extends React.Component {
       <Router>
         <div className="App">
           <Header user={this.state.user} loggedIn={this.state.loggedIn}/>
-          <Route exact path='/projects/new' render={() => <NewProject loggedIn={this.state.loggedIn}/>} />
+          <Route exact path='/projects/new' render={() => <NewProject user={this.state.user} loggedIn={this.state.loggedIn}/>} />
           <Route exact path='/user/account' render={() => <UserAccount user={this.state.user} />} />
           <Route exact path='/user/dashboard' render={() => <UserDashboard user={this.state.user} />} />
           <Route exact path='/user/cart' render={() => <UserCart user={this.state.user} />} />
@@ -71,6 +76,10 @@ class App extends React.Component {
           <Route exact path='/login' render={() => <Login handleLogin={this.handleLogin}loggedIn={this.state.loggedIn}/>} />
           <Route exact path='/products' render={() => <ProductsIndex />} />
           <Route exact path='/products/info'  component={ProductInfo} />
+          <Route
+            path='/projects/info'
+            render={(props) => <ProjectInfo {...props} user={this.state.user} />}
+          />
           <Route exact path='/projects' render={() => <ProjectsIndex />} />
           <Footer />
         </div>

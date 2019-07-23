@@ -37,9 +37,11 @@
   margin-left:auto;
   position: center;
   width: 90vw;
-  height: 40vw;
+  height: 100%;
   background-color:rgb(124, 122, 122);
   box-shadow: 6px 2px 276px -12px rgba(0,0,0,0.75);
+  margin-bottom: 5vw;
+  padding-bottom: 5vw;
 }
 
 .main-header {
@@ -136,9 +138,17 @@ label {
   position: center;
   width: 100vw;
   height: 22vw;
-  background-color:rgb(124, 122, 122);
-  box-shadow: 6px 2px 276px -12px rgba(0,0,0,0.75);
+  background-color: rgb(148, 148, 148);
+  box-shadow: 6px 2px 100px -12px rgba(0,0,0,0.75);
 }
+
+.carousel h2{
+  position: absolute;
+  margin-left: 3vw;
+  float: left;
+  color: white;
+}
+
 
 .featured-products {
   margin-right:auto;
@@ -193,6 +203,7 @@ label {
 -----------------------------------------*/
 
 .main-footer {
+  margin-top: 5vw;
   color: white;
   bottom: 0;
   background-color: rgb(80, 78, 78);
@@ -303,5 +314,175 @@ label {
 }
 
 
+/*---------------------------------------
+   Projects Index             
+-----------------------------------------*/
+
+.projects-container {
+  margin-right:2vw;
+  margin-left:2vw;
+  position: center;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+
+.project-box {
+  flex-basis:calc(33% - 15px);
+  flex-grow: 0;
+  flex-shrink:1;
+  margin-bottom: 30px;
+}
+
+.project-image {
+  max-height: 18vw;
+  cursor: pointer;
+}
+
+.project-footer h4{
+  color: white;
+  box-shadow: 6px 2px 276px -12px rgba(0,0,0,0.75);
+}
 
 
+/*---------------------------------------
+   Dashboard             
+-----------------------------------------*/
+
+.dashboard-projects {
+  min-height: 37vw;
+}
+
+.project-show {
+  color: white;
+  margin-top: 2%;
+  margin-right:auto;
+  margin-left:auto;
+  position: center;
+  width: 90vw;
+  height: 100%;
+  background-color:rgb(124, 122, 122);
+  box-shadow: 6px 2px 276px -12px rgba(0,0,0,0.75);
+}
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+  width: 250px;
+  height: 20px;
+}
+
+.project-products {
+  margin-left: 2%;
+  color: white;
+  height: 35vw;
+  background-color:rgb(124, 122, 122);
+  box-shadow: 6px 2px 30px -12px rgba(0,0,0,0.75);
+}
+
+.project-info {
+  max-height: 50vw;
+  overflow: hidden;
+  padding-bottom: 10vw;
+}
+.project-info img {
+  margin-left: auto;
+  margin-right: auto;
+  position: center;
+  height: 35vh;
+  width: auto\9;
+
+}
+
+
+ul {
+list-style-type: none;
+}
+
+.right-arrow-icon {
+  position: absolute;
+  top: 30vh;
+  left: 75%;
+  transform: translate(-50%,-50%);
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+}
+.left-arrow-icon {
+  position: absolute;
+  top: 27vh;
+  left: 25%;
+  transform: translate(-50%,-50%);
+  transform: rotate(180deg);
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+}
+
+
+.right-arrow {
+  position: absolute;
+  top: 25px;
+  width: 90%;
+  height: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, .2, 0, 0);
+  animation: arrow 700ms linear infinite;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 25px;
+  width: 90%;
+  height: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(.2, 0, 0, 0);
+  animation: arrow 700ms linear infinite;
+}
+
+.right-arrow::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 10px;
+  top: -12px;
+  right: -8px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.right-arrow::before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 10px;
+  top: 12px;
+  right: -8px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(.2, 0, 0, 0);
+  transform: rotate(-45deg);
+}
+
+.left-arrow::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 10px;
+  top: -12px;
+  right: -8px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.left-arrow::before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 10px;
+  top: 12px;
+  right: -8px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  transform: rotate(-45deg);
+}
