@@ -47,7 +47,7 @@ export default class Carousel extends Component {
                     <div className="right-arrow"></div>
                 </div>
 
-        <ImageSlide project={ this.props.projects[this.state.currentImageIndex] } />
+        <ImageSlide user={this.props.user} project={ this.props.projects[this.state.currentImageIndex] } />
 
                 <div onClick={this.nextSlide} className="right-arrow-icon">
                     <div className="left-arrow"></div>

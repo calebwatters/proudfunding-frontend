@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import NewProduct from '../components/NewProductModal'
+import NewProductModal from '../components/NewProductModal';
 export default class ProjectInfo extends Component {
 
     componentDidMount() {
@@ -21,11 +22,10 @@ export default class ProjectInfo extends Component {
                                 <br></br>
                                 <ul>
                                 {props.project.products.map(product => {
-                                    
                                     return <li><img key={product.id}className="ui small rounded image" src={product.image1_url} /></li>
                                 })}
                                 </ul>
-                                {props.project.user.id === this.props.user.id ? <div><br></br><button className="ui button">Edit</button> </div> : null}
+                                {props.project.user.id === this.props.location.state.user.id ? <div><br></br><NewProductModal /> </div> : null}
                             </div>
                         </div>
 
@@ -36,6 +36,9 @@ export default class ProjectInfo extends Component {
                             <img className="ui rounded image project-info-image" src={props.project.image1_url} />
                             <h2>Funding Goal: ${props.project.funding_goal}.00</h2>
                             <progress value={props.project.current_funding} max={ props.project.funding_goal}> </progress>
+                            <br></br>
+                            <br></br>
+                            <button className="ui button">Fund Us!</button>
                             </div>
                         {/* <div className="four wide column">
                         

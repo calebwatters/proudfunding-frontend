@@ -16,6 +16,7 @@ class ImageSlide extends Component {
                     pathname: '/projects/info',
                     state: {
                         project: this.props.project,
+                        user: this.props.user
                     }
                 }}
                 />

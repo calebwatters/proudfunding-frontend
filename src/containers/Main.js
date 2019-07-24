@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Carousel from '../components/Carousel'
 import FeaturedProducts from '../components/FeaturedProducts'
 import {API_ROOT} from '../constants/index'
+import {Dimmer, Loader} from 'semantic-ui-react'
 
 export default class Main extends Component {
 
@@ -21,7 +22,14 @@ export default class Main extends Component {
     render() {
         return (
                 <div>
-                    <Carousel projects={this.state.projects.slice(0, 3)}/>
+                {this.state.projects.length === 0 ? <div className="no-results">
+                    <Dimmer active inverted>
+                        <Loader content='Loading' />
+                    </Dimmer>
+
+                </div> : null}
+
+                    <Carousel user={this.props.user}projects={this.state.projects.slice(0, 3)}/>
                     <FeaturedProducts />
                 </div>
         )

@@ -29,17 +29,17 @@ export default class UserDashboard extends Component {
                     </div>
                 </div>
                 <div className="twelve wide stretched column">
-                    <h3 style={{ color: 'white' }}>Total Funds Raised: {this.state.projects.length ===0?0:null} </h3>
+                    <h3 style={{ color: 'white' }}>Total Funds Raised: ${this.state.projects.length ===0?0:10000}.00 </h3>
                     <div className="ui divider"></div>
 
                     <div className="dashboard-stats">
-                        <progress></progress>
+                        <progress max="100" value="10"></progress>
                     </div>
         
                     <div className ="dashboard-projects">
                         <div className="projects-container">
                                 {this.state.projects.map(project => {
-                                return <ProjectCard project={project} />
+                                return <ProjectCard user={this.props.user} project={project} />
                                 })}
                         </div>
                     </div>

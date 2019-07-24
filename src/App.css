@@ -92,6 +92,8 @@ a {
 }
 
 .page-logo {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(111, 202, 255);
   text-align: left;
   margin-left: 2%;
 }
@@ -192,8 +194,8 @@ label {
 }
 
 .social-icon li a:hover {
-    border-color: #A4C4FB;
-    color: #A4C4FB;
+    border-color: rgb(115, 176, 255);
+    color: rgb(115, 176, 255);
     transform: scale(1.1);
 }
 
@@ -203,7 +205,7 @@ label {
 -----------------------------------------*/
 
 .main-footer {
-  margin-top: 5vw;
+  /* margin-top: 5vw; */
   color: white;
   bottom: 0;
   background-color: rgb(80, 78, 78);
@@ -234,6 +236,7 @@ label {
 
 .search-bar {
   max-width: 10vw;
+  margin-right: 5vw;
 }
 
 .search-menu {
@@ -242,7 +245,7 @@ label {
 
 .no-results {
   color: white;
-  min-height: 59vh;
+  min-height: 40vw;
 }
 
 .user-dropdown {
@@ -337,6 +340,42 @@ label {
 .project-image {
   max-height: 18vw;
   cursor: pointer;
+  transition: .5s ease;
+  backface-visibility: hidden;
+    box-shadow: 6px 2px 20px -12px rgba(0.75,0.75,0.75,0.75);
+  
+}
+
+.project-box:hover img{
+  opacity: 0.3;
+}
+
+
+
+.project-box:hover .middle {
+  opacity: 1;
+}
+
+.middle {
+  cursor: pointer;
+  transition: .5s ease;
+  opacity: 0;
+  max-width: 15vw;
+  margin-left: auto;
+  margin-right: auto;
+  position: center;
+  transform: translate(0, -300%);
+  -ms-transform: translate(0, -300%);
+  text-align: center;
+}
+
+.box-text {
+  cursor: pointer;
+  z-index: 100;
+  background-color: rgb(76, 168, 175);
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }
 
 .project-footer h4{
@@ -485,4 +524,12 @@ list-style-type: none;
   background-color: #fff;
   box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
   transform: rotate(-45deg);
+}
+
+.shipping-info {
+  margin-right: 2%;
+  color: white;
+  height: 35vw;
+  background-color:rgb(124, 122, 122);
+  box-shadow: 6px 2px 30px -12px rgba(0,0,0,0.75);
 }

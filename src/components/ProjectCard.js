@@ -11,6 +11,7 @@ export default class ProjectCard extends Component {
     }
 
     componentDidMount() {
+        console.log("User", this.props.user)
         this.setState({
             clicked: false
         })
@@ -42,6 +43,9 @@ export default class ProjectCard extends Component {
         }
         return ( <div className="project-box">
             <img onClick={this.handleClick}  className="project-image" src={this.props.project.image1_url} /> 
+            <div className="middle">
+                <div onClick={this.handleClick}  className="box-text">{this.props.project.user.id === this.props.user.id ?"Edit":"Check it out"}</div>
+            </div>
             <div className='project-footer'><h4>{this.props.project.title}</h4></div>
             </div>
 

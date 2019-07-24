@@ -76,13 +76,12 @@ class Login extends Component {
 
 
     successGoogle = (response) => {
-       
+       console.log(response)
         let profile = response.profileObj
-        console.log(profile.imageUrl)
         let image = profile.imageUrl
         let name = profile.name
         let email = profile.email
-        let token = response.accessToken
+        let token = response.Zi.id_token
         this.login(email, name, image, token)
         this.setState({
             loggedIn: true

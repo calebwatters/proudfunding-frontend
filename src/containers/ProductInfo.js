@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import {API_ROOT} from '../constants/index'
-import {Card} from 'semantic-ui-react'
 import FeaturedProducts from '../components/FeaturedProducts'
-import Carousel from '../components/Carousel'
-
 export default class ProductInfo extends Component {
 
     state ={
-        products: []
+        products: [], 
+        productCount: 0
     }
 
     componentDidMount() {
@@ -16,6 +14,26 @@ export default class ProductInfo extends Component {
 
     componentDidUpdate() {
         window.scrollTo(0, 0)
+    }
+
+    addToCart = () => {
+        let product = this.props.location.state.product
+        let user = this.props.user
+        let token = this.getToken()
+        fetch(`${API_ROOT}/cart_items`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'Application/json',
+                'Authorization': 'Bearer ' + token
+            }, 
+            body: JSON.stringify({user_id: user.id, product_id: product.id})
+        }).then(this.setState(prevState => {
+            return {productCount: prevState.productCount + 1}
+        }))
+    }
+
+    getToken(jwt) {
+        return localStorage.getItem('jwt')
     }
 
     render() {
@@ -55,7 +73,8 @@ export default class ProductInfo extends Component {
                                 <h2>Ordering Preferences</h2>
                                 <div className="ui divider"></div>
                                     <br></br>
-                                <button className="ui button secondary"><h4><i className="ui icon cart"></i> Add to cart</h4></button>
+                                <button className="ui button secondary" onClick={this.addToCart}>
+                                    <h4><i className="ui icon cart"></i> Add to cart{this.state.productCount > 0 ? "(" + this.state.productCount + ")":null}</h4></button>
                             </div>
                         </div>
 
