@@ -11,6 +11,9 @@ export default class NewProject extends Component {
     }
     handleSubmit = (ev) => {
         ev.preventDefault()
+        if(this.props.user !== '') {
+
+      
         let token = this.getToken()
         let user = this.props.user
         let title = ev.target[0].value
@@ -34,6 +37,7 @@ export default class NewProject extends Component {
         .then(json => this.setState({
             submitted: true
         }))
+        }
     }
 
     getToken(jwt) {
@@ -50,6 +54,15 @@ export default class NewProject extends Component {
         
         return (
             <div>
+                {this.props.user === '' ? <div className="ui warning message">
+                    <i className="close icon"></i>
+                    <div className="header">
+                        You must register before you can do that!
+                    </div>
+                    Visit our login page, then try again
+                </div> :null}
+      
+
                 <div className="new-project-form"> 
                     <div className="form-fields">
                     <form onSubmit={this.handleSubmit}className="ui form">

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Modal, Button, Image, Header} from 'semantic-ui-react'
+import {API_ROOT} from '../constants/index'
 export default class NewProductModal extends Component {
 
     state = { modalOpen: false }
@@ -7,7 +8,26 @@ export default class NewProductModal extends Component {
     handleOpen = () => this.setState({ modalOpen: true })
 
     handleClose = () => this.setState({ modalOpen: false })
+    
+    getToken = (jwt) => localStorage.getItem('jwt')
 
+    handleSubmit = (ev) => {
+        ev.preventDefault();
+        let token = this.getToken();
+        let name = ev.target[0].value;
+        let description = ev.target[1].value;
+        let imgUrl = ev.target[2].value;
+        let price = ev.target[3].value;
+        fetch(`${API_ROOT}/products`, {
+            method: 'POST', 
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-type': 'Application/json'
+            }, 
+            body: JSON.stringify({name: name, description: description, image1_url: imgUrl, price: price, project_id: this.props.project.id})
+        })
+        this.handleClose();
+    }
 
     render() {
         return (
@@ -22,7 +42,7 @@ export default class NewProductModal extends Component {
                             {/* <h1 style={{ color: 'white' }}>Get Started!</h1> */}
                             <div className="field">
                                 <label style={{ color: 'white' }} >Product Name</label>
-                                <input type="text" placeholder="Eco Friendly Bedet" />
+                                <input type="text" placeholder="Eco Friendly Bidet" />
                             </div>
 
                             <div className="field">

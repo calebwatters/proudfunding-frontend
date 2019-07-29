@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NewProduct from '../components/NewProductModal'
 import NewProductModal from '../components/NewProductModal';
+import ProjectProduct from '../components/ProjectProduct'
 export default class ProjectInfo extends Component {
 
     componentDidMount() {
@@ -22,11 +23,18 @@ export default class ProjectInfo extends Component {
                                 <br></br>
                                 <ul>
                                 {props.project.products.map(product => {
-                                    return <li><img key={product.id}className="ui small rounded image" src={product.image1_url} /></li>
+                                    return <ProjectProduct product={product}/>
                                 })}
                                 </ul>
-                                {props.project.user.id === this.props.location.state.user.id ? <div><br></br><NewProductModal /> </div> : null}
+                                {props.project.user.id === this.props.location.state.user.id ? <div><br></br><NewProductModal project={props.project}/> </div> : null}
+                                <div>
+                                    <details>
+                                        <p>{props.project.description}</p>
+                                    </details>
+                                </div>
                             </div>
+
+                    
                         </div>
 
                         <div className="twelve wide column">
@@ -39,10 +47,10 @@ export default class ProjectInfo extends Component {
                             <br></br>
                             <br></br>
                             <button className="ui button">Fund Us!</button>
+                            <br></br>
+                                <br></br>
                             </div>
-                        {/* <div className="four wide column">
-                        
-                        </div> */}
+                           
                         </div>
                         </div>
 

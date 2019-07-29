@@ -4,9 +4,16 @@ import React, { Component } from 'react'
 export default class BillingInfo extends Component {
 
     render() {
-        return (
+        return ( <div>
+            <div class="ui warning message">
+                <i class="close icon"></i>
+                <div class="header">
+                    Please do not enter card information
+                    </div>
+                This website is built for demostration purposes and not for actual transactions
+                </div>
             <div className="card-form">
-
+                    
                 <form class="ui form">
                     <h4 class="ui dividing header" style={{ color: 'white' }} >Shipping Information</h4>
                     <div class="field">
@@ -21,21 +28,17 @@ export default class BillingInfo extends Component {
                     </div>
                                 
                             </div>
-                            <div class="field">
+                         
                         <label style={{ color: 'white' }}>Billing Address</label>
                                 <div class="fields">
-                                    <div class="twelve wide field">
+                                    <div class="ten wide field">
                                         <input type="text" name="shipping[address]" placeholder="Street Address"></input>
                                     </div>
                                         <div class="four wide field">
                                             <input type="text" name="shipping[address-2]" placeholder="Apt #"></input>
                                     </div>
-                                        </div>
-                                    </div>
-
-                    <div class="two fields">
-                        <div class="field">
-                            <label style={{ color: 'white' }} >State</label>
+                        <div class="two wide field">
+                          
                             <select class="ui fluid dropdown">
                                 <option value="">State</option>
                                 <option value="AL">Alabama</option>
@@ -91,8 +94,13 @@ export default class BillingInfo extends Component {
                                 <option value="WY">Wyoming</option>
                             </select>
                         </div>
-                        <div class="fields">
-                            <div class="seven wide field">
+
+
+                                        </div>
+                            
+
+                    <div class="two fields">
+                            <div class="eight wide field">
                                 <label style={{ color: 'white' }}>Card Number</label>
                                 <input type="text" name="card[number]" maxlength="16" placeholder="Card #"></input>
                             </div>
@@ -124,12 +132,13 @@ export default class BillingInfo extends Component {
                                         <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year"></input>
                                     </div>
                                 </div>
-                            </div> 
+      
                         </div>
                         </div>
 
                     </form>        
                 </div>
+        </div>
         )
     }
 }
