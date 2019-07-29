@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import NewProduct from '../components/NewProductModal'
 import NewProductModal from '../components/NewProductModal';
 import ProjectProduct from '../components/ProjectProduct'
+import FundingModal from '../components/FundingModal'
 export default class ProjectInfo extends Component {
 
     componentDidMount() {
@@ -46,7 +47,7 @@ export default class ProjectInfo extends Component {
                             <progress value={props.project.current_funding} max={ props.project.funding_goal}> </progress>
                             <br></br>
                             <br></br>
-                            <button className="ui button">Fund Us!</button>
+                            <FundingModal />
                             <br></br>
                                 <br></br>
                             </div>
