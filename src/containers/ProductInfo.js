@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import {API_ROOT} from '../constants/index'
 import FeaturedProducts from '../components/FeaturedProducts'
+import {Message} from 'semantic-ui-react'
 export default class ProductInfo extends Component {
 
     state ={
         products: [], 
-        productCount: 0
+        productCount: 0, 
+        error: false
     }
 
     componentDidMount() {
@@ -36,6 +38,18 @@ export default class ProductInfo extends Component {
         return localStorage.getItem('jwt')
     }
 
+    handleError = () => {
+        this.setState({
+            error: true
+        })
+    }
+
+    closeError = () => {
+        this.setState({
+            error: false
+        })
+    }
+
     render() {
 
 
@@ -45,6 +59,11 @@ export default class ProductInfo extends Component {
         return (
             <div>
                 <div className="product-show">
+                    {this.state.error ? <Message floating
+                        onDismiss={this.closeError}
+                        header='You must register before you can do that!'
+                        content='Visit our login page, then try again'
+                    /> : null}
                     <div className="ui grid product-info">
                         <div className="four wide column">
                             <div className="product-images">
@@ -73,8 +92,11 @@ export default class ProductInfo extends Component {
                                 <h2>Ordering Preferences</h2>
                                 <div className="ui divider"></div>
                                     <br></br>
-                                <button className="ui button secondary" onClick={this.addToCart}>
-                                    <h4><i className="ui icon cart"></i> Add to cart{this.state.productCount > 0 ? "(" + this.state.productCount + ")":null}</h4></button>
+                                {this.props.user !== "" ? <button className="ui button secondary" onClick={this.addToCart}>
+                                    <h4><i className="ui icon cart"></i> Add to cart{this.state.productCount > 0 ? "(" + this.state.productCount + ")" : null}</h4></button>: 
+                                    <button className="ui button secondary" onClick={this.handleError}>
+                                        <h4><i className="ui icon cart"></i> Add to cart</h4></button>}
+          
                             </div>
                         </div>
 
