@@ -73,9 +73,9 @@ class App extends React.Component {
     localStorage.setItem('jwt', '')
   }
 
-  componentDidMount() {
-    this.clearToken()
-  }
+  // componentDidMount() {
+  //   this.clearToken()
+  // }
 
 
   render() {

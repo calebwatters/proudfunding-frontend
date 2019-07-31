@@ -30,11 +30,12 @@ export default class UserDashboard extends Component {
                 </div>
                 <div className="twelve wide stretched column">
                     <h3 style={{ color: 'white' }}>Total Funds Raised: ${this.state.projects.length ===0?0:10000}.00 </h3>
+                        <div className="dashboard-stats">
+                            <progress className="progress" max="100" value="0"></progress>
+                        </div>
                     <div className="ui divider"></div>
-
-                    <div className="dashboard-stats">
-                        <progress max="100" value="10"></progress>
-                    </div>
+                    {this.state.projects.length === 0 ? <h3 style={{color: 'white'}}>No projects created</h3> : null}
+                 
         
                     <div className ="dashboard-projects">
                         <div className="projects-container">

@@ -81,7 +81,7 @@ export default class ProjectInfo extends Component {
                             <h2 >Funding Goal: ${this.state.project.funding_goal}.00</h2>
                             {/* <br></br> */}
                             <h2>Amount Raised: ${this.state.project.current_funding}.00</h2>
-                            <progress value={this.state.project.current_funding} max={ this.state.project.funding_goal}> </progress>
+                            <progress className="progress" value={this.state.project.current_funding} max={ this.state.project.funding_goal}> </progress>
                             <br></br>
                             <br></br>
                                 {this.props.location.state.user !== '' ?
