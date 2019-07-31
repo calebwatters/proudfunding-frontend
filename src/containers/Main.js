@@ -22,14 +22,17 @@ export default class Main extends Component {
     render() {
         return (
                 <div>
+            
                 {this.state.projects.length === 0 ? <div className="no-results">
                     <Dimmer active inverted>
                         <Loader content='Loading' />
                     </Dimmer>
 
                 </div> : null}
-
+                <div className="carousel">
+                    <h2>Projects of the Week!</h2>
                     <Carousel user={this.props.user}projects={this.state.projects.slice(0, 3)}/>
+                    </div>
                     <FeaturedProducts />
                 </div>
         )

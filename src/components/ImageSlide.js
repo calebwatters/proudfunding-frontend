@@ -11,7 +11,7 @@ class ImageSlide extends Component {
      styles = {
         maxHeight: '20vw'};
         render() {
-            if(this.state.clicked === true) {
+            if(this.state.clicked === true && this.props.project.image1_url) {
                 return <Redirect to={{
                     pathname: '/projects/info',
                     state: {
@@ -20,12 +20,17 @@ class ImageSlide extends Component {
                     }
                 }}
                 />
-            }
+            } 
 
             if (this.props.project) {
-                return (
-                    <img onClick={this.handleClick} className="image-slider" style={this.styles} src={this.props.project.image1_url} />
-                );
+                if(this.props.project.image1_url) {
+                    return (
+                        <img onClick={this.handleClick} className="image-slider " style={this.styles} src={this.props.project.image1_url} />
+                    );
+                } else {
+                   return  <img onClick={this.handleClick} className="image-slider" style={this.styles} src={this.props.project} />
+                }
+         
             } else {
                 return <div></div>
             }

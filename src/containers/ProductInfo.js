@@ -39,6 +39,7 @@ export default class ProductInfo extends Component {
     }
 
     handleError = () => {
+        window.scrollTo(0, 0)
         this.setState({
             error: true
         })
@@ -68,11 +69,24 @@ export default class ProductInfo extends Component {
                         <div className="four wide column">
                             <div className="product-images">
                                 <br></br>
-                                <img className="ui image medium"src={props.product.image1_url} />
+                                <img className="ui rounded image large" src={props.product.image1_url}  />
                                 <br></br>
-                                <img className="ui image tiny" src={props.product.image3_url} />
+                                <div className="ui three column grid">
+                                    <div className="row">
+                                        <div className="column">
+                                            <img className="ui rounded image tiny" src={props.product.image1_url}/>
+                                        </div>
+                                        <div className="column">
+                                            <img className="ui rounded image tiny" src={props.product.image3_url} />
+                                        </div>
+                                        <div className="column">
+                                            <img className="ui rounded image tiny" src={props.product.image2_url} />
+                                        </div>
+                                    </div>
+                                </div>
+                               
                                 <br></br>
-                                <img className="ui image tiny" src={props.product.image2_url} />
+                          
                             </div>
                         </div>
 
@@ -91,6 +105,8 @@ export default class ProductInfo extends Component {
                                 <br></br>
                                 <h2>Ordering Preferences</h2>
                                 <div className="ui divider"></div>
+                                    <br></br>
+                                    <h3>Fastest Delivery Time: 1-2 business days</h3>
                                     <br></br>
                                 {this.props.user !== "" ? <button className="ui button secondary" onClick={this.addToCart}>
                                     <h4><i className="ui icon cart"></i> Add to cart{this.state.productCount > 0 ? "(" + this.state.productCount + ")" : null}</h4></button>: 

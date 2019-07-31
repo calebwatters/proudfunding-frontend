@@ -51,10 +51,10 @@ export default class FeaturedProduct extends Component {
                     </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                        <a>
+                        <h3>
                             <Icon name='copyright outline' />
                             {this.props.product.project.company_name}
-                        </a>
+                        </h3>
                     </Card.Content>
                 </Card>
 

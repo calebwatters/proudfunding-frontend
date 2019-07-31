@@ -40,8 +40,7 @@ export default class Carousel extends Component {
 
   render () {
     return (
-      <div className="carousel">
-          <h2>Projects of the Week!</h2>
+      <div>
           <div className="image-slider">
                 <div onClick={this.previousSlide}className="left-arrow-icon">
                     <div className="right-arrow"></div>

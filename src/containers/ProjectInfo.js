@@ -4,6 +4,7 @@ import NewProductModal from '../components/NewProductModal';
 import ProjectProduct from '../components/ProjectProduct'
 import FundingModal from '../components/FundingModal'
 import {Message} from 'semantic-ui-react'
+import Carousel from '../components/Carousel'
 export default class ProjectInfo extends Component {
 
     state={
@@ -22,6 +23,7 @@ export default class ProjectInfo extends Component {
     }
 
     handleNonRegistered = () => {
+        window.scrollTo(0, 0)
         this.setState( {
             invalidUser: true
         })
@@ -35,6 +37,7 @@ export default class ProjectInfo extends Component {
 
     render() {
        
+        const images = [this.state.project.image1_url, this.state.project.image2_url, this.state.project.image3_url]
         return (
              <div>
                 <div className="project-show">
@@ -52,7 +55,7 @@ export default class ProjectInfo extends Component {
                                 <br></br>
                                 <ul>
                                 {this.state.project.products.map(product => {
-                                    return <ProjectProduct product={product}/>
+                                    return <ProjectProduct key={product.id} product={product}/>
                                 })}
                                 </ul>
                                 {this.state.project.user.id === this.props.location.state.user.id ? <div><br></br><NewProductModal project={this.state.project}/> </div> : null}
@@ -70,10 +73,14 @@ export default class ProjectInfo extends Component {
                             <div className="project-info">
                             <h1>{this.state.project.title}</h1>
                             <div className="ui divider"></div>
-                            <img className="ui rounded image project-info-image" src={this.state.project.image1_url} />
-                            <h2>Funding Goal: ${this.state.project.funding_goal}.00</h2>
-                            <br></br>
-                            <h2>Amount Raised: ${this.state.project.current_funding}</h2>
+                                {/* <div className="project-carousel"> */}
+                                <Carousel user={this.props.user} projects={images} />
+                                {/* </div> */}
+                            {/* <img className="ui rounded image project-info-image" src={this.state.project.image1_url} /> */}
+
+                            <h2 >Funding Goal: ${this.state.project.funding_goal}.00</h2>
+                            {/* <br></br> */}
+                            <h2>Amount Raised: ${this.state.project.current_funding}.00</h2>
                             <progress value={this.state.project.current_funding} max={ this.state.project.funding_goal}> </progress>
                             <br></br>
                             <br></br>
@@ -84,6 +91,8 @@ export default class ProjectInfo extends Component {
                                 
                             <br></br>
                                 <br></br>
+                                <h4 style={{float: 'left'}}>{this.state.project.company_name}</h4>
+                                <h4 style={{ float: 'left' }}>{this.state.project.comapny_url}</h4>
                             </div>
                            
                         </div>
