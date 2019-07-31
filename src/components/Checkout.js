@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-// import { Dropdown } from 'semantic-ui-react'
-import { Link } from "react-router-dom";
-import UserDropdown from './UserDropdown'
+import {Message} from 'semantic-ui-react'
 
 
 export default class Checkout extends Component {
@@ -10,6 +8,11 @@ export default class Checkout extends Component {
     render() {
         return (
             <div className="project-show">
+                <Message floating
+                    onDismiss={this.closeError}
+                    header='Coming soon!'
+                    content='Still a build in progress'
+                />
                 <div className="ui grid">
 
                     <div className="twelve wide column">

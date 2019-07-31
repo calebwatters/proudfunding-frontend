@@ -15,12 +15,12 @@ export default class UserDropdown extends Component {
             <Header as='h4'>
                     {this.props.user.image_url ? <img className="ui small circular image" src={this.props.user.image_url} /> : <Icon name='user' />}
                 <Header.Content className="user-dropdown-header">
-                    {this.props.user.name}
+                    
                     <Dropdown
                             className='User Option'
                             floating
                             options={options}
-                            trigger={<React.Fragment />}
+                            trigger={this.props.user.name}
                     />
                 </Header.Content>
                 </Header></div>
