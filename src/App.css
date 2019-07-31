@@ -325,7 +325,9 @@ label {
 /*---------------------------------------
    Projects Index             
 -----------------------------------------*/
-
+.projects-index {
+  margin-top: 2vw;
+}
 .projects-container {
   margin-right:2vw;
   margin-left:2vw;
