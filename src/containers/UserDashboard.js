@@ -14,14 +14,16 @@ export default class UserDashboard extends Component {
                    let token = this.getToken();
                    fetch(`${API_ROOT}/projects`, {
                      headers: {
-                       Authorization: "Bearer " + token
+                       Authorization: "Bearer " + token,
+                       "Content-Type": "application/json"
                      }
                    })
                      .then(res => res.json())
                      .then(json => {
                        let userProjects = json.filter(
                          project =>
-                           project.user.id === this.props.user.id
+                           project.user.id ===
+                           this.props.user.id
                        );
                        this.setState({
                          projects: userProjects

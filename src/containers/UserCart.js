@@ -16,7 +16,8 @@ export default class UserCart extends Component {
         let token = this.getToken();
         fetch(`${API_ROOT}/cart_items`, {
           headers: {
-            Authorization: "Bearer " + token
+            Authorization: "Bearer " + token,
+            "Content-Type": "application/json"
           }
         })
           .then(res => res.json())

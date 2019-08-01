@@ -47,15 +47,16 @@ class Login extends Component {
     getProfile = () => {
         let token = this.getToken()
         fetch(`${API_ROOT}/profile`, {
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
+          headers: {
+            Authorization: "Bearer " + token,
+            "Content-Type": "application/json"
+          }
         })
-            .then(res => res.json())
-            .then(json => {
-                console.log('profile:', json)
-                this.props.handleLogin(json.user)
-            })
+          .then(res => res.json())
+          .then(json => {
+            console.log("profile:", json);
+            this.props.handleLogin(json.user);
+          });
     }
 
     logout() {

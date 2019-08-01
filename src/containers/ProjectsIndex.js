@@ -14,12 +14,13 @@ export default class ProjectsIndex extends Component {
                  getToken(jwt) {
                    return localStorage.getItem("jwt");
                  }
-                 
+
                  componentDidMount() {
                    let token = this.getToken();
                    fetch(`${API_ROOT}/projects`, {
                      headers: {
-                       Authorization: "Bearer " + token
+                       Authorization: "Bearer " + token,
+                       "Content-Type": "application/json"
                      }
                    })
                      .then(res => res.json())

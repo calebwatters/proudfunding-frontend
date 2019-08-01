@@ -13,12 +13,13 @@ export default class ProductsIndex extends Component {
                    return localStorage.getItem("jwt");
                  }
 
-                 
+
                  componentDidMount() {
                    let token = this.getToken();
                    fetch(`${API_ROOT}/products`, {
                      headers: {
-                       Authorization: "Bearer " + token
+                       Authorization: "Bearer " + token,
+                       "Content-Type": "application/json"
                      }
                    })
                      .then(res => res.json())
