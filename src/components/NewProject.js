@@ -23,7 +23,7 @@ export default class NewProject extends Component {
         let image1Url = ev.target[4].value
         let image2Url = ev.target[5].value
         let image3Url = ev.target[6].value
-        let goal = ev.target[6].value
+        let goal = ev.target[7].value
         //TODO write case switch to make sure required fields are filled in
 
         fetch(`${API_ROOT}/projects`, {
