@@ -25,9 +25,9 @@ export default class ProjectProduct extends Component {
 
         }
         return (
-                <li>
+                <div className="ten wide column">
                 <img onClick={this.handleClick} className="ui small rounded image" src={this.props.product.image1_url} />
-                <h4 style={{ textAlign: 'left' }}>{this.props.product.name}</h4></li>
+                <h4 style={{ textAlign: 'left' }}>{this.props.product.name}</h4></div>
         )
     }
 }

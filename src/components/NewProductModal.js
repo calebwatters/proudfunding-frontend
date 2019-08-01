@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Modal, Button, Image, Header} from 'semantic-ui-react'
 import {API_ROOT} from '../constants/index'
+import { thisExpression } from '@babel/types';
 export default class NewProductModal extends Component {
 
     state = { modalOpen: false }
@@ -25,7 +26,8 @@ export default class NewProductModal extends Component {
                 'Content-type': 'Application/json'
             }, 
             body: JSON.stringify({name: name, description: description, image1_url: imgUrl, price: price, project_id: this.props.project.id})
-        })
+        }).then(res => res.json())
+        .then(json => this.props.addProduct(json))
         this.handleClose();
     }
 
@@ -60,7 +62,7 @@ export default class NewProductModal extends Component {
                                 <input rows="1" placeholder="10000"></input>
                             </div>
                             <div>
-                                <button className="ui button">Create Project</button>
+                                <button className="ui button">Create Product</button>
                             </div>
 
                         </form>
