@@ -18,7 +18,7 @@ export default class Header extends Component {
                         <Link className="item" to="/products" >Products</Link>
                   
                     <div className="right menu">
-                        {this.props.loggedIn === false ? <Link className="item" to="/login" >Login</Link> : <UserDropdown user={this.props.user} />}
+                        {this.props.loggedIn === false ? <Link className="item" to="/login" >Login with Google</Link> : <UserDropdown user={this.props.user} />}
                         
                     </div>
                 </div>

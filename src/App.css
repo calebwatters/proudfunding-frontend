@@ -585,3 +585,9 @@ progress::-webkit-progress-value {
   background-color: rgb(115, 196, 223);
 }
 
+.shipping-form{
+  max-width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}

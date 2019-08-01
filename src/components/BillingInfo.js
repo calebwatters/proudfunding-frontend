@@ -5,24 +5,24 @@ export default class BillingInfo extends Component {
 
     render() {
         return ( <div>
-            <div class="ui warning message">
-                <i class="close icon"></i>
-                <div class="header">
+            <div className="ui warning message">
+                <i className="close icon"></i>
+                <div className="header">
                     Please do not enter card information
                     </div>
                 This website is built for demostration purposes and not for actual transactions
                 </div>
             <div className="card-form">
                     
-                <form class="ui form">
-                    <h4 class="ui dividing header" style={{ color: 'white' }} >Shipping Information</h4>
-                    <div class="field">
+                <form className="ui form">
+                    <h4 className="ui dividing header" style={{ color: 'white' }} >Shipping Information</h4>
+                    <div className="field">
                         <label style={{ color: 'white' }} >Name</label>
-                        <div class="two fields">
-                            <div class="field">
+                        <div className="two fields">
+                            <div className="field">
                                 <input type="text" name="shipping[first-name]" placeholder="First Name"></input>
                             </div>
-                            <div class="field">
+                            <div className="field">
                                 <input type="text" name="shipping[last-name]" placeholder="Last Name"></input>
                             </div>
                     </div>
@@ -30,16 +30,16 @@ export default class BillingInfo extends Component {
                             </div>
                          
                         <label style={{ color: 'white' }}>Billing Address</label>
-                                <div class="fields">
-                                    <div class="ten wide field">
+                                <div className="fields">
+                                    <div className="ten wide field">
                                         <input type="text" name="shipping[address]" placeholder="Street Address"></input>
                                     </div>
-                                        <div class="four wide field">
+                                        <div className="four wide field">
                                             <input type="text" name="shipping[address-2]" placeholder="Apt #"></input>
                                     </div>
-                        <div class="two wide field">
+                        <div className="two wide field">
                           
-                            <select class="ui fluid dropdown">
+                            <select className="ui fluid dropdown">
                                 <option value="">State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -99,20 +99,20 @@ export default class BillingInfo extends Component {
                                         </div>
                             
 
-                    <div class="two fields">
-                            <div class="eight wide field">
+                    <div className="two fields">
+                            <div className="eight wide field">
                                 <label style={{ color: 'white' }}>Card Number</label>
                                 <input type="text" name="card[number]" maxlength="16" placeholder="Card #"></input>
                             </div>
-                            <div class="three wide field">
+                            <div className="three wide field">
                                 <label style={{ color: 'white' }} >CVC</label>
                                 <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC"></input>
                             </div>
-                            <div class="six wide field">
+                            <div className="six wide field">
                                 <label style={{ color: 'white' }} >Expiration</label>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <select class="ui fluid search dropdown" name="card[expire-month]">
+                                <div className="two fields">
+                                    <div className="field">
+                                        <select className="ui fluid search dropdown" name="card[expire-month]">
                                             <option value="">Month</option>
                                             <option value="1">January</option>
                                             <option value="2">February</option>
@@ -128,7 +128,7 @@ export default class BillingInfo extends Component {
                                             <option value="12">December</option>
                                         </select>
                                     </div>
-                                    <div class="field">
+                                    <div className="field">
                                         <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year"></input>
                                     </div>
                                 </div>

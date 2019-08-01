@@ -29,7 +29,7 @@ export default class UserAccount extends Component {
         }
          return (
              <div className="user-account">
-             <div className="ui grid">
+             <div className="ui grid" style={{minHeight: '100%'}}>
                  <div className="four wide  column">
                          <div className="ui vertical fluid tabular menu">
                          <a  onClick={this.handleClick} className="item" id="userInfo">
