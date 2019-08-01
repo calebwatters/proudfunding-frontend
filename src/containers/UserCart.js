@@ -7,12 +7,24 @@ export default class UserCart extends Component {
         checkout: false, 
         items: []
     }
+
+    getToken(jwt) {
+                   return localStorage.getItem("jwt");
+                 }
+
     componentDidMount() {
-        fetch(`${API_ROOT}/cart_items`)
-        .then(res => res.json())
-        .then(json => this.setState({
-            items: json
-        }))
+        let token = this.getToken();
+        fetch(`${API_ROOT}/cart_items`, {
+          headers: {
+            Authorization: "Bearer " + token
+          }
+        })
+          .then(res => res.json())
+          .then(json =>
+            this.setState({
+              items: json
+            })
+          );
 
 
         window.scrollTo(0, 0)
